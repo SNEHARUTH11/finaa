@@ -1,12 +1,19 @@
 import React from "react";
 
-function Careers() {
+const Careers = () => {
   return (
-    <section className="p-10 bg-gray-100 text-center">
-      <h2 className="text-2xl font-bold">Careers</h2>
-      <p>This is the Careers section. we are hiring!!!</p>
+    <section
+      id="careers"
+      className="w-full py-20 px-6 md:px-12 bg-white min-h-screen flex flex-col items-center justify-center"
+    >
+      <div className="max-w-4xl mx-auto text-center">
+        <h2 className="text-4xl md:text-5xl font-bold mb-6">Careers</h2>
+        <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+          Join our team and .............
+        </p>
+      </div>
     </section>
   );
-}
+};
 
 export default Careers;
