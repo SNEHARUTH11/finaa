@@ -1,12 +1,11 @@
 import React from "react";
 
-function Footer() {
+const Footer = () => {
   return (
-    <section className="p-10 bg-gray-100 text-center">
-      <h2 className="text-2xl font-bold">Footer</h2>
-      <p>This is the Footer section.</p>
-    </section>
+    <footer className="bg-black text-white py-6 text-center">
+      <p className="text-sm">&copy; {new Date().getFullYear()} Company. All rights reserved.</p>
+    </footer>
   );
-}
+};
 
 export default Footer;
