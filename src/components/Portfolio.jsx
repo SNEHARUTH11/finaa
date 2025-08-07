@@ -40,7 +40,7 @@ const Portfolio = () => {
           {/* Content */}
           <div className="w-full md:w-1/2 md:pl-8">
             <h3 className="text-sm text-blue-600 tracking-widest uppercase">Featured Product</h3>
-            <h4 className="text-3xl font-bold mb-3">Cloud Migration</h4>
+            <h4 className="text-3xl font-bold mb-3">Pg management App</h4>
             <p className="text-gray-700 mb-4">
               Efficient cloud transition services tailored for modern enterprises, ensuring scalability, security, and cost-efficiency.
             </p>
