@@ -1,7 +1,5 @@
 import React from "react";
 
-<<<<<<< HEAD
-=======
 const jobOpenings = [
   {
     title: "Frontend Developer",
@@ -29,21 +27,10 @@ const jobOpenings = [
   },
 ];
 
->>>>>>> 38793e3 (Added animations and visual updates)
 const Careers = () => {
   return (
     <section
       id="careers"
-<<<<<<< HEAD
-      className="w-full py-20 px-6 md:px-12 bg-white min-h-screen flex flex-col items-center justify-center"
-    >
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6">Careers</h2>
-        <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-          Join our team and .............
-        </p>
-      </div>
-=======
       className="w-full min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-emerald-900 text-white px-6 py-24 relative"
     >
       {/* Heading */}
@@ -96,21 +83,18 @@ const Careers = () => {
         </svg>
       </div>
       {/* Arrow to Contact Section */}
-<div className="absolute bottom-0 left-0 w-full">
-  <a href="#contact">
-    <svg
-      className="w-full h-16 text-emerald-50 hover:opacity-80 transition"
-      viewBox="0 0 1440 320"
-      fill="currentColor"
-    >
-      <path d="M0,160L1440,32L1440,320L0,320Z"></path>
-    </svg>
-  </a>
-</div>
-
->>>>>>> 38793e3 (Added animations and visual updates)
+      <div className="absolute bottom-0 left-0 w-full">
+        <a href="#contact">
+          <svg
+            className="w-full h-16 text-emerald-50 hover:opacity-80 transition"
+            viewBox="0 0 1440 320"
+            fill="currentColor"
+          >
+            <path d="M0,160L1440,32L1440,320L0,320Z"></path>
+          </svg>
+        </a>
+      </div>
     </section>
-    
   );
 };
 
