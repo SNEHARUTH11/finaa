@@ -17,11 +17,9 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/30 shadow-md">
       <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
-        <h1 className="text-xl font-bold text-white drop-shadow">
-          SCIFYX
-        </h1>
+        <h1 className="text-xl font-bold text-white drop-shadow">SCIFYX</h1>
 
-        {/* Desktop nav */}
+        {/* Desktop Navigation */}
         <ul className="hidden md:flex space-x-6">
           {sections.map((section) => (
             <li key={section}>
