@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-import React from "react";
-=======
-import React, { useEffect, useRef } from "react";
->>>>>>> 38793e3 (Added animations and visual updates)
-
-const About = () => {
+import React, { useEffect, useRef } from "react";const About = () => {
   const canvasRef = useRef();
 
   useEffect(() => {
@@ -79,15 +73,7 @@ const About = () => {
   return (
     <section
       id="about"
-<<<<<<< HEAD
-      className="w-full py-20 px-6 md:px-12 bg-white min-h-screen flex flex-col items-center justify-center"
-    >
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6">About Us</h2>
-        <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-          We are a passionate team of creators delivering innovative experiences across industries.
-=======
-      className="relative w-full min-h-screen bg-black text-white overflow-hidden flex flex-col md:flex-row items-center justify-between px-6 py-20 md:py-24"
+      className="relative w-full min-h-screen bg-white text-black overflow-hidden flex flex-col md:flex-row items-center justify-between px-6 py-20 md:py-24"
     >
       {/* Left Content */}
       <div className="w-full md:w-1/2 text-center md:text-left z-10 space-y-6">
@@ -102,20 +88,19 @@ const About = () => {
           <div className="h-1 w-8 bg-blue-500 rounded-full"></div>
         </div>
 
-        <h2 className="text-4xl md:text-5xl font-bold leading-snug text-white">
+        <h2 className="text-4xl md:text-5xl font-bold leading-snug text-black">
           Connecting the dots. It’s what we do.
         </h2>
 
-        <div className="space-y-1 text-blue-400 text-sm font-semibold">
+        <div className="space-y-1 text-blue-600 text-sm font-semibold">
           <p>• Secure IT Solutions</p>
           <p>• Cloud & AI Integration</p>
           <p>• Scalable Enterprise Platforms</p>
         </div>
 
-        <p className="text-lg text-gray-300 leading-relaxed max-w-xl mx-auto md:mx-0">
+        <p className="text-lg text-gray-700 leading-relaxed max-w-xl mx-auto md:mx-0">
           We are a trusted IT solutions provider building intelligent, secure, and scalable systems.
           From cloud computing and cybersecurity to AI and enterprise IT, we connect ideas to execution.
->>>>>>> 38793e3 (Added animations and visual updates)
         </p>
 
         <button className="mt-6 px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-none shadow-md transition-all duration-300">
