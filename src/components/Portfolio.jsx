@@ -1,64 +1,90 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 const Portfolio = () => {
+  const sectionRef = useRef();
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          section.classList.add("animate-slideIn");
+          section.classList.remove("opacity-0");
+        }
+      },
+      { threshold: 0.1 }
+    );
+    if (section) observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
   const scrollToNext = () => {
     document.getElementById("recognition")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <section
+      ref={sectionRef}
       id="portfolio"
-      className="relative w-full min-h-screen bg-white text-black px-6 py-24 flex items-center justify-center"
+      className="relative min-h-screen w-full bg-white text-black py-24 px-6 opacity-0 transition-opacity duration-1000 overflow-hidden"
     >
-      <div className="max-w-5xl w-full bg-white border border-black rounded-lg p-8 shadow-md transition-all duration-300 hover:shadow-blue-400/40">
-        <div className="text-center mb-12">
-          <h1 className="text-sm font-medium text-blue-500 tracking-wider uppercase">Our Products</h1>
-          <h2 className="text-4xl font-bold relative inline-block pb-2">
-            Building Future-Ready Digital Solutions
-            <span className="block h-1 bg-blue-500 w-24 mx-auto mt-2 rounded-full animate-pulse"></span>
-          </h2>
-          <p className="text-gray-600 mt-4 max-w-xl mx-auto">
-            Explore our high-impact, scalable IT product that drives innovation and efficiency.
-          </p>
-        </div>
+      {/* Section Title */}
+      <div className="text-center mb-16">
+        <h2 className="text-4xl font-bold inline-block text-black">
+          Our <span className="text-green-500">Products</span>
+          <span className="block h-1 w-20 mx-auto bg-green-500 mt-2 rounded-full animate-pulse" />
+        </h2>
+      </div>
 
-        <div className="flex flex-col md:flex-row items-center gap-8">
-          {/* Image with Link */}
-          <a
-            href="https://your-product-link.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full md:w-1/2"
-          >
-            <div className="w-full h-60 bg-gray-200 flex items-center justify-center rounded-md overflow-hidden">
-              <span className="text-sm text-gray-500">Your Product Image</span>
-              {/* Replace with:
-                  <img src="your-image.jpg" alt="Product" className="w-full h-full object-cover" /> */}
+      {/* Glowing Background */}
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-green-400 via-white to-green-500 opacity-30 blur-3xl animate-spin-slow z-0" />
+
+      {/* Product Card */}
+      <div className="flex justify-center relative z-10">
+        <div className="group [perspective:1200px]">
+          <div className="relative w-80 h-96 duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] rounded-xl shadow-2xl border border-gray-300 bg-white">
+
+            {/* Front */}
+            <div className="absolute inset-0 p-6 backface-hidden flex flex-col items-center justify-center rounded-xl transition-all duration-500 group-hover:shadow-lg group-hover:scale-105">
+              <div className="w-16 h-16 bg-green-500 text-white flex items-center justify-center rounded-full mb-4 shadow-xl group-hover:animate-ping-slow">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path d="M12 4v16m8-8H4" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-2 text-green-600">Product 1</h3>
+              <p className="text-center text-gray-700 mb-4">
+                A powerful solution focused on performance and scalability.
+              </p>
+              <a
+                href="/product/1"
+                className="mt-auto px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
+              >
+                View Product
+              </a>
             </div>
-          </a>
 
-          {/* Content */}
-          <div className="w-full md:w-1/2 md:pl-8">
-            <h3 className="text-sm text-blue-600 tracking-widest uppercase">Featured Product</h3>
-            <h4 className="text-3xl font-bold mb-3">Pg management App</h4>
-            <p className="text-gray-700 mb-4">
-              Efficient cloud transition services tailored for modern enterprises, ensuring scalability, security, and cost-efficiency.
-            </p>
-            <a
-              href="https://your-product-link.com"
-              className="inline-block px-5 py-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-none transition-all"
-            >
-              Learn More
-            </a>
+            {/* Back */}
+            <div className="absolute inset-0 p-6 [transform:rotateY(180deg)] backface-hidden bg-green-500 text-white rounded-xl flex flex-col items-center justify-center">
+              <h3 className="text-xl font-bold mb-2">More Info</h3>
+              <p className="text-center mb-4">
+                This product integrates the latest technologies for modern businesses.
+              </p>
+              <a
+                href="/product/1"
+                className="px-4 py-2 bg-white text-green-600 rounded-lg hover:bg-gray-100 transition"
+              >
+                Learn More
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Down Arrow */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
-        <button onClick={scrollToNext} className="animate-bounce text-blue-500">
+      {/* Scroll Down Arrow */}
+      <div className="mt-16 flex justify-center z-10 relative">
+        <button onClick={scrollToNext}>
           <svg
-            className="w-6 h-6 md:w-8 md:h-8"
+            className="w-8 h-8 text-green-500 animate-bounce"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
@@ -73,3 +99,4 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
+
